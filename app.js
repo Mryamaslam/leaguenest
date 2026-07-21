@@ -2,8 +2,14 @@
   var t=document.getElementById("navToggle"),l=document.getElementById("navLinks");
   if(t&&l)t.addEventListener("click",function(){l.classList.toggle("open")});
   document.querySelectorAll(".reveal").forEach(function(el){
-    new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add("in")})},{threshold:.12}).observe(el);
+    if(!("IntersectionObserver" in window)){ el.classList.add("in"); return; }
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+    },{ threshold: 0.05, rootMargin: "80px 0px" });
+    io.observe(el);
   });
+  setTimeout(function(){ document.querySelectorAll(".reveal:not(.in)").forEach(function(el){ el.classList.add("in"); }); }, 800);
+
   var f=document.getElementById("contactForm");
   if(f)f.addEventListener("submit",function(e){
     e.preventDefault();
