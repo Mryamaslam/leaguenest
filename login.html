@@ -1,0 +1,29 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Sign in | LeagueNest</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css"/></head><body>
+<header><div class="wrap nav"><a class="brand" href="index.html"><span class="puck"></span>LeagueNest</a>
+<button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+<nav class="links" id="navLinks"><a href="index.html">Home</a><a href="programs.html">Programs</a><a href="clubs.html">For Clubs</a><a href="login.html">Sign in</a><a href="contact.html">Contact</a></nav>
+<a class="btn btn-red" href="login.html">Parent Portal</a></div></header>
+<div class="shell">
+<section class="left">
+<a class="brand" href="index.html" style="margin-bottom:40px"><span class="puck"></span>LeagueNest</a>
+<h1>Welcome back</h1>
+<p class="muted" style="margin-bottom:22px">Sign in to manage teams, schedules, and registrations.</p>
+<form onsubmit="event.preventDefault(); location.href='dashboard.html';">
+<div class="field"><label for="email">Email</label><input class="input" id="email" type="email" placeholder="you@club.org" required/></div>
+<div class="field"><label for="password">Password</label><input class="input" id="password" type="password" placeholder="Password" required/></div>
+<button class="btn btn-full" type="submit">Sign in</button>
+</form>
+<a href="contact.html" class="muted" style="display:block;text-align:center;margin-top:14px;font-weight:600">Need an account? Contact your club</a>
+</section>
+<aside class="right">
+<div class="alert">You need to sign in or sign up before continuing.</div>
+<div style="text-align:center;padding:30px 10px"><h2>Season tools for every program</h2>
+<p class="muted" style="margin:10px auto 18px;max-width:32ch">Parents and directors stay aligned from registration day to championship weekend.</p>
+<img class="split-img" src="images/team.jpg" alt="Team huddle"/></div>
+<p class="muted" style="font-size:12px;text-align:center">Secure member access</p>
+</aside>
+</div>
+<script src="app.js"></script></body></html>
